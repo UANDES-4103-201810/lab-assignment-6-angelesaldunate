@@ -38,6 +38,13 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+
+    if @user.update(user_params)
+      flash[:notice] = "You have successfully updated an user."
+    else
+      flash[:notice]="You have an error updating an user."
+
+    end
     #complete this method
   end
 
