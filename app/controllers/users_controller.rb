@@ -25,6 +25,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "You have successfully created an user."
+    else
+      flash[:notice]="You have an error creating an user."
+
+    end
     #complete this method
   end
 
